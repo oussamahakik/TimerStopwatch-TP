@@ -17,6 +17,16 @@ public class RingingTimer extends ActiveTimer {
     	java.awt.Toolkit.getDefaultToolkit().beep();
     	return this;
     }
+
+	@Override
+	protected void entry() {
+		ringing = true;
+	}
+
+	@Override
+	protected void exit() {
+		ringing = false;
+	}
     
     public String getDisplayString() {
     	// display decreasing values starting from memTimer counting down to 0
