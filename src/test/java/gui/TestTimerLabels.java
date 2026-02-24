@@ -10,7 +10,6 @@ class TestTimerLabels extends TestGUIAbstract {
 	void assertTimerLabels(AbstractTimer state) {
 		c.currentState = state;
 		String stateName = state.getClass().getSimpleName();
-		System.out.println(stateName);
 		g.updateUI(c);
 		assertEquals(g.b1.getText(),c.getLeftText(),"button 1 for state " + stateName);
 		assertEquals(g.b2.getText(),c.getUpText(),"button 2 for state " + stateName);
