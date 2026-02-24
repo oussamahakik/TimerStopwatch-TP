@@ -33,6 +33,7 @@ public abstract class ClockState {
     	// the entry action of the state, which is empty (no action) by default
         //replace System.out by a logger
         logger.fine("entering {} " + this.getClass().getName());
+
     };
     	
     protected void exit() {
