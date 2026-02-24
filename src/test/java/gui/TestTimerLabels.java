@@ -17,6 +17,7 @@ class TestTimerLabels extends TestGUIAbstract {
 		assertEquals(g.b3.getText(),c.getRightText(),"button 3 for state " + stateName);
 	}
 	@Test
+	@DisplayName("Timer labels match all timer states")
 	void testIdleTimerLabels() {
 		assertTimerLabels(IdleTimer.Instance());
 		assertTimerLabels(PausedTimer.Instance());
@@ -26,6 +27,7 @@ class TestTimerLabels extends TestGUIAbstract {
 	}
 
    @Test
+   @DisplayName("Initial timer button labels")
    void testTimerButtonLabels1() {
 		g.updateUI(c);
 		assertEquals("change mode",g.b1.getText());
@@ -37,6 +39,7 @@ class TestTimerLabels extends TestGUIAbstract {
 	};
 
 	@Test
+	@DisplayName("SetTimer button labels")
 	void testTimerButtonLabels2() {
 		c.right(); //simulate clicking on the left button
 		g.updateUI(c); //apply the effect on the user interface
@@ -49,6 +52,7 @@ class TestTimerLabels extends TestGUIAbstract {
 	}
 
 	@Test
+	@DisplayName("Stopwatch labels after mode switch")
 	void testStopwatchButtonLabels1() {
 		c.left(); //simulate clicking on the left button
 		g.updateUI(c); //apply the effect on the user interface
@@ -58,6 +62,7 @@ class TestTimerLabels extends TestGUIAbstract {
 	}
 
 	@Test
+	@DisplayName("Stopwatch labels while running")
 	void testStopwatchButtonLabels2() {
 		c.left(); //simulate clicking on the left button
 		c.up(); //simulate clicking on the right button

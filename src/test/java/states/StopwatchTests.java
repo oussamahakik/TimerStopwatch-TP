@@ -19,7 +19,8 @@ class StopwatchTests {
         context.currentState = AbstractStopwatch.Instance();
 	}
 		
-	@org.junit.jupiter.api.Test
+	@Test
+	@DisplayName("Stopwatch initial state and counters")
 	void testInitialState() {
 		//context.tick(); //no tick() needed for this test;
 		/* When initialising the context (see setup() method above)
@@ -34,13 +35,15 @@ class StopwatchTests {
 	    assertEquals(0, AbstractStopwatch.getLapTime(),"For the value of lapTime we ");
 	}
 
-	@org.junit.jupiter.api.Test
+	@Test
+	@DisplayName("AbstractStopwatch initial substate is ResetStopwatch")
 	void testInitialAbstractStopwatch() {
 		// The initial state of composite state AbstractStopwatch should be ResetStopwatch
 		assertSame(AbstractStopwatch.Instance(), ResetStopwatch.Instance());
 	}
 	
 	@Test
+	@DisplayName("Stopwatch history state is restored after mode switches")
 	void testHistoryState() {
 		current = AbstractStopwatch.Instance();
 		// after processing the left() event, we should arrive in the initial state of AbstractStopwatch

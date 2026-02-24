@@ -20,6 +20,7 @@ class TestScenarios {
     
   //This is more a kind of integration test than a real unit test	
   @Test
+  @DisplayName("Complete timer-stopwatch scenario")
   void completeScenario() {
 	  assertEquals(IdleTimer.Instance(),c.currentState);
 	  assertEquals(0,AbstractTimer.getMemTimer());
